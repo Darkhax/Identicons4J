@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.diluv.identicon'
+version = "${version}" + getBuildNumber()
+archivesBaseName = 'Identicon4J'
+
+repositories {
+
+}
+
+dependencies {
+
+}
+
+String getBuildNumber() {
+
+    return System.getenv('BUILD_NUMBER') ? System.getenv('BUILD_NUMBER') : System.getenv('TRAVIS_BUILD_NUMBER') ? System.getenv('TRAVIS_BUILD_NUMBER') : '0';
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+
+    description = 'Creates a JAR containing the source code.'
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+
+    description = 'Creates a JAR containing the JavaDocs.'
+    from javadoc.destinationDir
+    classifier = 'javadoc'
+}
+
+//Adds the artifact types added by this script to the actual artifacts list. 
+artifacts {
+
+    archives sourcesJar
+    archives javadocJar
+}
