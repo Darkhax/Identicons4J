@@ -1,4 +1,4 @@
-# Identicons4J
+# Identicons4J [![Build Status](https://ci.mcmoddev.com/buildStatus/icon?job=Diluv/Identicons4J)](https://ci.mcmoddev.com/job/Diluv/job/Identicons4J/)
 A simple, yet modular library for creating Identicons. An Identicon is a way of visually representing the hash value of arbitrary data. These have a wide range of applications, however the most common use is for unique default avatars. There are many different ways to visualize an identicon. You can find examples of the supported identicon types further in this document. 
 
 ## Source Code
