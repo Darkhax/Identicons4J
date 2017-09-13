@@ -14,12 +14,6 @@ import java.util.logging.Logger;
 public class Identicons {
 
     /**
-     * The version of the Identicons4J lib. The value of this field is set to the proper
-     * version by the build process.
-     */
-    public static final String VERSION = "@VERSION@";
-
-    /**
      * A logger for the Identicons4J lib.
      */
     public static final Logger LOG = Logger.getLogger("Identicons4J");
