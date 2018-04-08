@@ -25,18 +25,11 @@ public class HashGeneratorDigest implements IHashGenerator {
      * @param algorithim The algorithm to use. Each JRE can have different generators
      *        available. The JRE specifications require every implementation to support MD5,
      *        SHA-1, and SHA-256.
+     * @throws NoSuchAlgorithmException If no algorithm is found, an exception will be thrown.
      */
-    public HashGeneratorDigest (String algorithim) {
+    public HashGeneratorDigest (String algorithim) throws NoSuchAlgorithmException {
 
-        try {
-
-            this.messageDigest = MessageDigest.getInstance(algorithim);
-        }
-
-        catch (final NoSuchAlgorithmException e) {
-
-            e.printStackTrace();
-        }
+        this.messageDigest = MessageDigest.getInstance(algorithim);
     }
 
     @Override
