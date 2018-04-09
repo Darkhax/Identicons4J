@@ -1,8 +1,8 @@
 package com.diluv.identicon.hashgen;
 
 /**
- * This interface is used to define a hash generator. The purpose of the hash generator is to
- * provide the hash of an input, as a byte array.
+ * This interface is used to define a hash generator. The purpose of the hash
+ * generator is to provide the hash of an input, as a byte array.
  *
  * @author Tyler Hancock (Darkhax)
  */
