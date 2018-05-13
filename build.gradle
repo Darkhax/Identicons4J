@@ -1,16 +1,10 @@
-import org.apache.tools.ant.filters.ReplaceTokens 
-
 apply plugin: 'java'
-apply plugin: 'maven-publish'
 apply plugin: 'maven'
-apply plugin: 'idea'
 
-group = 'com.diluv.identicon'
-version = "${version}" + getBuildNumber()
-archivesBaseName = 'Identicon4J'
+group = ext.project_group
+version = ext.project_version + "." + getBuildNumber() + (gitBranch() == "development" ? "-SNAPSHOT" : "")
+archivesBaseName = ext.project_name
 
-apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/artifacts.gradle'
-apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/maven.gradle'
 
 uploadArchives {
     repositories {
@@ -21,16 +15,22 @@ uploadArchives {
 }
 
 repositories {
-
     jcenter()
 }
 
 dependencies {
-
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-String getBuildNumber() {
+def gitBranch() {
+    def branch = ""
+    def proc = "git rev-parse --abbrev-ref HEAD".execute()
+    proc.in.eachLine { line -> branch = line }
+    proc.err.eachLine { line -> println line }
+    proc.waitFor()
+    branch
+}
 
-    return System.getenv('BUILD_NUMBER') ? System.getenv('BUILD_NUMBER') : System.getenv('TRAVIS_BUILD_NUMBER') ? System.getenv('TRAVIS_BUILD_NUMBER') : '0';
+String getBuildNumber() {
+    return System.getenv("BUILD_NUMBER") ?: System.getenv("TRAVIS_BUILD_NUMBER") ?: "0"
 }
