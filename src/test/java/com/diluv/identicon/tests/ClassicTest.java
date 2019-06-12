@@ -20,6 +20,6 @@ public class ClassicTest {
     private void testDigest (String algorithm, byte[] knownGood) throws NoSuchAlgorithmException {
 
         final HashGeneratorDigest gen = new HashGeneratorDigest(algorithm);
-        Assert.assertArrayEquals(gen.getHash("test"), knownGood);
+        Assert.assertArrayEquals(gen.getHash("test".getBytes()), knownGood);
     }
 }

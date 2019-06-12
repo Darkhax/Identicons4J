@@ -14,5 +14,5 @@ public interface IHashGenerator {
      * @param input The input to get the hash of.
      * @return An array of bytes which represent the hash.
      */
-    byte[] getHash (String input);
+    byte[] getHash (byte[] input);
 }

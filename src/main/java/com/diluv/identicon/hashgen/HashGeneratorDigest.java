@@ -34,9 +34,9 @@ public class HashGeneratorDigest implements IHashGenerator {
     }
 
     @Override
-    public byte[] getHash (String input) {
+    public byte[] getHash (byte[] input) {
 
-        return this.messageDigest.digest(input.getBytes());
+        return this.messageDigest.digest(input);
     }
 
     public String getAlgorithmName () {

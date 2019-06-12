@@ -6,5 +6,5 @@ import com.diluv.identicon.hashgen.IHashGenerator;
 
 public interface IIdenticonGenerator {
 
-    BufferedImage generate (String input, IHashGenerator hashGen);
+    BufferedImage generate (byte[] input, IHashGenerator hashGen);
 }

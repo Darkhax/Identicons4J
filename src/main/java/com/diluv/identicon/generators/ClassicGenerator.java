@@ -50,7 +50,7 @@ public class ClassicGenerator implements IIdenticonGenerator {
     }
 
     @Override
-    public BufferedImage generate (String input, IHashGenerator hashGen) {
+    public BufferedImage generate (byte[] input, IHashGenerator hashGen) {
 
         final BufferedImage identicon = new BufferedImage(SIZE, SIZE, BufferedImage.TYPE_INT_ARGB);
         final WritableRaster raster = identicon.getRaster();
