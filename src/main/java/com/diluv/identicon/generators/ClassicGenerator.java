@@ -17,8 +17,7 @@ import com.diluv.identicon.hashgen.IHashGenerator;
 public class ClassicGenerator implements IIdenticonGenerator {
 
     /**
-     * The size of an identicon. The classic identicon is 5x5. If you need to scale this image
-     * up you can use {@link Identicons#scaleUpImage(BufferedImage, int, int)}
+     * The size of the image to generate. A classic identicon has 5x5 pixels.
      */
     private static final int SIZE = 5;
 
