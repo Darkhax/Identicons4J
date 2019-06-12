@@ -1,18 +1,18 @@
 package com.diluv.identicon.hashgen;
 
 /**
- * This interface is used to define a hash generator. The purpose of the hash
- * generator is to provide the hash of an input, as a byte array.
+ * This interface provides a wrapper for various types of hash generators. Hash generators are
+ * used by the library to seed various types of identicon generation.
  *
- * @author Tyler Hancock (Darkhax)
+ * @Author Tyler Hancock (Darkhax)
  */
 public interface IHashGenerator {
 
     /**
-     * Used to get the hash of a string input.
+     * Generates a hash for a given input.
      *
-     * @param input The input to get the hash of.
-     * @return An array of bytes which represent the hash.
+     * @param input An array of bytes which represent the input data.
+     * @return An array of bytes which represent the hash of the input.
      */
     byte[] getHash (byte[] input);
 }
